@@ -1,0 +1,650 @@
+[
+  {
+    "id": "a-1",
+    "group": "A",
+    "matchday": 1,
+    "home_team_id": "mexico",
+    "away_team_id": "south-africa",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "a-2",
+    "group": "A",
+    "matchday": 1,
+    "home_team_id": "korea-republic",
+    "away_team_id": "czechia",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "a-3",
+    "group": "A",
+    "matchday": 2,
+    "home_team_id": "mexico",
+    "away_team_id": "korea-republic",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "a-4",
+    "group": "A",
+    "matchday": 2,
+    "home_team_id": "czechia",
+    "away_team_id": "south-africa",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "a-5",
+    "group": "A",
+    "matchday": 3,
+    "home_team_id": "czechia",
+    "away_team_id": "mexico",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "a-6",
+    "group": "A",
+    "matchday": 3,
+    "home_team_id": "south-africa",
+    "away_team_id": "korea-republic",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "b-1",
+    "group": "B",
+    "matchday": 1,
+    "home_team_id": "canada",
+    "away_team_id": "bosnia-herzegovina",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "b-2",
+    "group": "B",
+    "matchday": 1,
+    "home_team_id": "qatar",
+    "away_team_id": "switzerland",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "b-3",
+    "group": "B",
+    "matchday": 2,
+    "home_team_id": "canada",
+    "away_team_id": "qatar",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "b-4",
+    "group": "B",
+    "matchday": 2,
+    "home_team_id": "switzerland",
+    "away_team_id": "bosnia-herzegovina",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "b-5",
+    "group": "B",
+    "matchday": 3,
+    "home_team_id": "switzerland",
+    "away_team_id": "canada",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "b-6",
+    "group": "B",
+    "matchday": 3,
+    "home_team_id": "bosnia-herzegovina",
+    "away_team_id": "qatar",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "c-1",
+    "group": "C",
+    "matchday": 1,
+    "home_team_id": "brazil",
+    "away_team_id": "morocco",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "c-2",
+    "group": "C",
+    "matchday": 1,
+    "home_team_id": "haiti",
+    "away_team_id": "scotland",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "c-3",
+    "group": "C",
+    "matchday": 2,
+    "home_team_id": "brazil",
+    "away_team_id": "haiti",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "c-4",
+    "group": "C",
+    "matchday": 2,
+    "home_team_id": "scotland",
+    "away_team_id": "morocco",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "c-5",
+    "group": "C",
+    "matchday": 3,
+    "home_team_id": "scotland",
+    "away_team_id": "brazil",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "c-6",
+    "group": "C",
+    "matchday": 3,
+    "home_team_id": "morocco",
+    "away_team_id": "haiti",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "d-1",
+    "group": "D",
+    "matchday": 1,
+    "home_team_id": "usa",
+    "away_team_id": "paraguay",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "d-2",
+    "group": "D",
+    "matchday": 1,
+    "home_team_id": "australia",
+    "away_team_id": "turkiye",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "d-3",
+    "group": "D",
+    "matchday": 2,
+    "home_team_id": "usa",
+    "away_team_id": "australia",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "d-4",
+    "group": "D",
+    "matchday": 2,
+    "home_team_id": "turkiye",
+    "away_team_id": "paraguay",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "d-5",
+    "group": "D",
+    "matchday": 3,
+    "home_team_id": "turkiye",
+    "away_team_id": "usa",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "d-6",
+    "group": "D",
+    "matchday": 3,
+    "home_team_id": "paraguay",
+    "away_team_id": "australia",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "e-1",
+    "group": "E",
+    "matchday": 1,
+    "home_team_id": "germany",
+    "away_team_id": "curacao",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "e-2",
+    "group": "E",
+    "matchday": 1,
+    "home_team_id": "cote-divoire",
+    "away_team_id": "ecuador",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "e-3",
+    "group": "E",
+    "matchday": 2,
+    "home_team_id": "germany",
+    "away_team_id": "cote-divoire",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "e-4",
+    "group": "E",
+    "matchday": 2,
+    "home_team_id": "ecuador",
+    "away_team_id": "curacao",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "e-5",
+    "group": "E",
+    "matchday": 3,
+    "home_team_id": "ecuador",
+    "away_team_id": "germany",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "e-6",
+    "group": "E",
+    "matchday": 3,
+    "home_team_id": "curacao",
+    "away_team_id": "cote-divoire",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "f-1",
+    "group": "F",
+    "matchday": 1,
+    "home_team_id": "netherlands",
+    "away_team_id": "japan",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "f-2",
+    "group": "F",
+    "matchday": 1,
+    "home_team_id": "sweden",
+    "away_team_id": "tunisia",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "f-3",
+    "group": "F",
+    "matchday": 2,
+    "home_team_id": "netherlands",
+    "away_team_id": "sweden",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "f-4",
+    "group": "F",
+    "matchday": 2,
+    "home_team_id": "tunisia",
+    "away_team_id": "japan",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "f-5",
+    "group": "F",
+    "matchday": 3,
+    "home_team_id": "tunisia",
+    "away_team_id": "netherlands",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "f-6",
+    "group": "F",
+    "matchday": 3,
+    "home_team_id": "japan",
+    "away_team_id": "sweden",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "g-1",
+    "group": "G",
+    "matchday": 1,
+    "home_team_id": "belgium",
+    "away_team_id": "egypt",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "g-2",
+    "group": "G",
+    "matchday": 1,
+    "home_team_id": "iran",
+    "away_team_id": "new-zealand",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "g-3",
+    "group": "G",
+    "matchday": 2,
+    "home_team_id": "belgium",
+    "away_team_id": "iran",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "g-4",
+    "group": "G",
+    "matchday": 2,
+    "home_team_id": "new-zealand",
+    "away_team_id": "egypt",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "g-5",
+    "group": "G",
+    "matchday": 3,
+    "home_team_id": "new-zealand",
+    "away_team_id": "belgium",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "g-6",
+    "group": "G",
+    "matchday": 3,
+    "home_team_id": "egypt",
+    "away_team_id": "iran",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "h-1",
+    "group": "H",
+    "matchday": 1,
+    "home_team_id": "spain",
+    "away_team_id": "cabo-verde",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "h-2",
+    "group": "H",
+    "matchday": 1,
+    "home_team_id": "saudi-arabia",
+    "away_team_id": "uruguay",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "h-3",
+    "group": "H",
+    "matchday": 2,
+    "home_team_id": "spain",
+    "away_team_id": "saudi-arabia",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "h-4",
+    "group": "H",
+    "matchday": 2,
+    "home_team_id": "uruguay",
+    "away_team_id": "cabo-verde",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "h-5",
+    "group": "H",
+    "matchday": 3,
+    "home_team_id": "uruguay",
+    "away_team_id": "spain",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "h-6",
+    "group": "H",
+    "matchday": 3,
+    "home_team_id": "cabo-verde",
+    "away_team_id": "saudi-arabia",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "i-1",
+    "group": "I",
+    "matchday": 1,
+    "home_team_id": "france",
+    "away_team_id": "senegal",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "i-2",
+    "group": "I",
+    "matchday": 1,
+    "home_team_id": "iraq",
+    "away_team_id": "norway",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "i-3",
+    "group": "I",
+    "matchday": 2,
+    "home_team_id": "france",
+    "away_team_id": "iraq",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "i-4",
+    "group": "I",
+    "matchday": 2,
+    "home_team_id": "norway",
+    "away_team_id": "senegal",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "i-5",
+    "group": "I",
+    "matchday": 3,
+    "home_team_id": "norway",
+    "away_team_id": "france",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "i-6",
+    "group": "I",
+    "matchday": 3,
+    "home_team_id": "senegal",
+    "away_team_id": "iraq",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "j-1",
+    "group": "J",
+    "matchday": 1,
+    "home_team_id": "argentina",
+    "away_team_id": "algeria",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "j-2",
+    "group": "J",
+    "matchday": 1,
+    "home_team_id": "austria",
+    "away_team_id": "jordan",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "j-3",
+    "group": "J",
+    "matchday": 2,
+    "home_team_id": "argentina",
+    "away_team_id": "austria",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "j-4",
+    "group": "J",
+    "matchday": 2,
+    "home_team_id": "jordan",
+    "away_team_id": "algeria",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "j-5",
+    "group": "J",
+    "matchday": 3,
+    "home_team_id": "jordan",
+    "away_team_id": "argentina",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "j-6",
+    "group": "J",
+    "matchday": 3,
+    "home_team_id": "algeria",
+    "away_team_id": "austria",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "k-1",
+    "group": "K",
+    "matchday": 1,
+    "home_team_id": "portugal",
+    "away_team_id": "congo-dr",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "k-2",
+    "group": "K",
+    "matchday": 1,
+    "home_team_id": "uzbekistan",
+    "away_team_id": "colombia",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "k-3",
+    "group": "K",
+    "matchday": 2,
+    "home_team_id": "portugal",
+    "away_team_id": "uzbekistan",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "k-4",
+    "group": "K",
+    "matchday": 2,
+    "home_team_id": "colombia",
+    "away_team_id": "congo-dr",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "k-5",
+    "group": "K",
+    "matchday": 3,
+    "home_team_id": "colombia",
+    "away_team_id": "portugal",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "k-6",
+    "group": "K",
+    "matchday": 3,
+    "home_team_id": "congo-dr",
+    "away_team_id": "uzbekistan",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "l-1",
+    "group": "L",
+    "matchday": 1,
+    "home_team_id": "england",
+    "away_team_id": "croatia",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "l-2",
+    "group": "L",
+    "matchday": 1,
+    "home_team_id": "ghana",
+    "away_team_id": "panama",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "l-3",
+    "group": "L",
+    "matchday": 2,
+    "home_team_id": "england",
+    "away_team_id": "ghana",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "l-4",
+    "group": "L",
+    "matchday": 2,
+    "home_team_id": "panama",
+    "away_team_id": "croatia",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "l-5",
+    "group": "L",
+    "matchday": 3,
+    "home_team_id": "panama",
+    "away_team_id": "england",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "id": "l-6",
+    "group": "L",
+    "matchday": 3,
+    "home_team_id": "croatia",
+    "away_team_id": "ghana",
+    "home_score": null,
+    "away_score": null
+  }
+]

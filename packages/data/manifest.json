@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "default_snapshot": "official-pre-tournament",
+  "as_of": "2026-06-20",
+  "scores": "blank",
+  "sources": {
+    "teams_and_groups": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/standings",
+    "fixtures": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/scores-fixtures",
+    "regulations": "https://digitalhub.fifa.com/m/636f5c9c6f29771f/original/FWC2026_regulations_EN.pdf"
+  },
+  "ratings_notice": "Illustrative model seed ratings created for this educational project; not official FIFA ratings."
+}

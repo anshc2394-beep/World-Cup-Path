@@ -1,0 +1,23 @@
+[
+  {
+    "id": "official-pre-tournament",
+    "label": "Official pre-tournament",
+    "status": "available",
+    "default": true,
+    "score_overlay": null
+  },
+  {
+    "id": "sample-demo",
+    "label": "Sample completed tournament",
+    "status": "available",
+    "default": false,
+    "score_overlay": "snapshots/sample-demo.json"
+  },
+  {
+    "id": "live-snapshot",
+    "label": "Live snapshot",
+    "status": "future",
+    "default": false,
+    "score_overlay": null
+  }
+]

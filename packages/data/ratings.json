@@ -1,0 +1,290 @@
+[
+  {
+    "id": "mexico",
+    "elo_rating": 1805,
+    "attack_rating": 83,
+    "defense_rating": 82
+  },
+  {
+    "id": "south-africa",
+    "elo_rating": 1580,
+    "attack_rating": 72,
+    "defense_rating": 69
+  },
+  {
+    "id": "korea-republic",
+    "elo_rating": 1720,
+    "attack_rating": 79,
+    "defense_rating": 77
+  },
+  {
+    "id": "czechia",
+    "elo_rating": 1725,
+    "attack_rating": 80,
+    "defense_rating": 77
+  },
+  {
+    "id": "canada",
+    "elo_rating": 1740,
+    "attack_rating": 80,
+    "defense_rating": 78
+  },
+  {
+    "id": "bosnia-herzegovina",
+    "elo_rating": 1625,
+    "attack_rating": 74,
+    "defense_rating": 71
+  },
+  {
+    "id": "qatar",
+    "elo_rating": 1570,
+    "attack_rating": 70,
+    "defense_rating": 69
+  },
+  {
+    "id": "switzerland",
+    "elo_rating": 1810,
+    "attack_rating": 85,
+    "defense_rating": 81
+  },
+  {
+    "id": "brazil",
+    "elo_rating": 1910,
+    "attack_rating": 89,
+    "defense_rating": 87
+  },
+  {
+    "id": "morocco",
+    "elo_rating": 1840,
+    "attack_rating": 86,
+    "defense_rating": 83
+  },
+  {
+    "id": "haiti",
+    "elo_rating": 1510,
+    "attack_rating": 67,
+    "defense_rating": 66
+  },
+  {
+    "id": "scotland",
+    "elo_rating": 1710,
+    "attack_rating": 79,
+    "defense_rating": 76
+  },
+  {
+    "id": "usa",
+    "elo_rating": 1790,
+    "attack_rating": 83,
+    "defense_rating": 81
+  },
+  {
+    "id": "paraguay",
+    "elo_rating": 1700,
+    "attack_rating": 79,
+    "defense_rating": 75
+  },
+  {
+    "id": "australia",
+    "elo_rating": 1715,
+    "attack_rating": 78,
+    "defense_rating": 77
+  },
+  {
+    "id": "turkiye",
+    "elo_rating": 1760,
+    "attack_rating": 82,
+    "defense_rating": 78
+  },
+  {
+    "id": "germany",
+    "elo_rating": 1880,
+    "attack_rating": 88,
+    "defense_rating": 86
+  },
+  {
+    "id": "curacao",
+    "elo_rating": 1505,
+    "attack_rating": 68,
+    "defense_rating": 65
+  },
+  {
+    "id": "cote-divoire",
+    "elo_rating": 1735,
+    "attack_rating": 80,
+    "defense_rating": 78
+  },
+  {
+    "id": "ecuador",
+    "elo_rating": 1815,
+    "attack_rating": 85,
+    "defense_rating": 81
+  },
+  {
+    "id": "netherlands",
+    "elo_rating": 1900,
+    "attack_rating": 89,
+    "defense_rating": 87
+  },
+  {
+    "id": "japan",
+    "elo_rating": 1810,
+    "attack_rating": 85,
+    "defense_rating": 81
+  },
+  {
+    "id": "sweden",
+    "elo_rating": 1770,
+    "attack_rating": 81,
+    "defense_rating": 80
+  },
+  {
+    "id": "tunisia",
+    "elo_rating": 1640,
+    "attack_rating": 75,
+    "defense_rating": 72
+  },
+  {
+    "id": "belgium",
+    "elo_rating": 1835,
+    "attack_rating": 85,
+    "defense_rating": 83
+  },
+  {
+    "id": "egypt",
+    "elo_rating": 1680,
+    "attack_rating": 77,
+    "defense_rating": 74
+  },
+  {
+    "id": "iran",
+    "elo_rating": 1765,
+    "attack_rating": 81,
+    "defense_rating": 80
+  },
+  {
+    "id": "new-zealand",
+    "elo_rating": 1515,
+    "attack_rating": 68,
+    "defense_rating": 66
+  },
+  {
+    "id": "spain",
+    "elo_rating": 1930,
+    "attack_rating": 90,
+    "defense_rating": 88
+  },
+  {
+    "id": "cabo-verde",
+    "elo_rating": 1560,
+    "attack_rating": 71,
+    "defense_rating": 68
+  },
+  {
+    "id": "saudi-arabia",
+    "elo_rating": 1615,
+    "attack_rating": 73,
+    "defense_rating": 72
+  },
+  {
+    "id": "uruguay",
+    "elo_rating": 1860,
+    "attack_rating": 87,
+    "defense_rating": 84
+  },
+  {
+    "id": "france",
+    "elo_rating": 1940,
+    "attack_rating": 91,
+    "defense_rating": 89
+  },
+  {
+    "id": "senegal",
+    "elo_rating": 1795,
+    "attack_rating": 84,
+    "defense_rating": 80
+  },
+  {
+    "id": "iraq",
+    "elo_rating": 1585,
+    "attack_rating": 71,
+    "defense_rating": 70
+  },
+  {
+    "id": "norway",
+    "elo_rating": 1810,
+    "attack_rating": 85,
+    "defense_rating": 81
+  },
+  {
+    "id": "argentina",
+    "elo_rating": 1960,
+    "attack_rating": 92,
+    "defense_rating": 90
+  },
+  {
+    "id": "algeria",
+    "elo_rating": 1690,
+    "attack_rating": 78,
+    "defense_rating": 75
+  },
+  {
+    "id": "austria",
+    "elo_rating": 1800,
+    "attack_rating": 83,
+    "defense_rating": 82
+  },
+  {
+    "id": "jordan",
+    "elo_rating": 1565,
+    "attack_rating": 71,
+    "defense_rating": 68
+  },
+  {
+    "id": "portugal",
+    "elo_rating": 1915,
+    "attack_rating": 90,
+    "defense_rating": 88
+  },
+  {
+    "id": "congo-dr",
+    "elo_rating": 1595,
+    "attack_rating": 73,
+    "defense_rating": 70
+  },
+  {
+    "id": "uzbekistan",
+    "elo_rating": 1630,
+    "attack_rating": 74,
+    "defense_rating": 73
+  },
+  {
+    "id": "colombia",
+    "elo_rating": 1845,
+    "attack_rating": 87,
+    "defense_rating": 83
+  },
+  {
+    "id": "england",
+    "elo_rating": 1920,
+    "attack_rating": 90,
+    "defense_rating": 88
+  },
+  {
+    "id": "croatia",
+    "elo_rating": 1825,
+    "attack_rating": 86,
+    "defense_rating": 82
+  },
+  {
+    "id": "ghana",
+    "elo_rating": 1650,
+    "attack_rating": 75,
+    "defense_rating": 74
+  },
+  {
+    "id": "panama",
+    "elo_rating": 1620,
+    "attack_rating": 74,
+    "defense_rating": 71
+  }
+]

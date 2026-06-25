@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "worldcup-path-simulator"
+version = "1.0.0"
+description = "Deterministic tournament rules and Monte Carlo engine for WorldCupPath 2026"
+requires-python = ">=3.12"
+dependencies = ["numpy>=2.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
