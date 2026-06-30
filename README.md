@@ -311,6 +311,6 @@ See [docs/api-reference.md](docs/api-reference.md).
 
 Built by **anshc2394-beep**.
 
-- GitHub: `https:/[/github.com/<your-github-username>](https://github.com/anshc2394-beep)`
-- LinkedIn: `https://www.[linkedin.com/in/<your-linkedin-slug>](https://www.linkedin.com/in/ansh-chaudhary-9b3214354/)/`
+- GitHub: `https://github.com/anshc2394-beep`
+- LinkedIn: `https://www.linkedin.com/in/ansh-chaudhary-9b3214354/`
 
