@@ -5,9 +5,10 @@ import { useRouter } from "next/navigation";
 import { Copy, Share2, Trophy } from "lucide-react";
 import { apiFetch } from "@/lib/api";
 import { useSimulatorStore } from "@/lib/store";
-import type { Score, TournamentState } from "@/lib/types";
+import type { Score, Team, TournamentState } from "@/lib/types";
 import { ErrorState } from "./ErrorState";
 import { LoadingState } from "./LoadingState";
+import { TeamBadge } from "./TeamBadge";
 
 type PredictionData = {
   id: string;
@@ -35,16 +36,21 @@ export function PredictionClient({ predictionId }: { predictionId: string }) {
   const router = useRouter();
   const load = useSimulatorStore((state) => state.load);
   const [data, setData] = useState<PredictionData | null>(null);
+  const [teamsById, setTeamsById] = useState<Record<string, Team>>({});
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
     let active = true;
 
-    apiFetch<PredictionData>(`/predictions/${predictionId}`)
-      .then((prediction) => {
+    Promise.all([
+      apiFetch<PredictionData>(`/predictions/${predictionId}`),
+      apiFetch<Team[]>("/teams").catch((): Team[] => []),
+    ])
+      .then(([prediction, teams]) => {
         if (!active) return;
         setData(prediction);
+        setTeamsById(Object.fromEntries(teams.map((team) => [team.id, team])));
         setError("");
       })
       .catch((reason: Error) => {
@@ -87,6 +93,7 @@ export function PredictionClient({ predictionId }: { predictionId: string }) {
   const totalMatches = progress.total_group_matches;
   const progressPercent = totalMatches ? Math.round((completedMatches / totalMatches) * 100) : 0;
   const championId = data.derived_state.champion_id;
+  const champion = championId ? teamsById[championId] : undefined;
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1.1fr_.9fr]">
@@ -148,8 +155,10 @@ export function PredictionClient({ predictionId }: { predictionId: string }) {
             <>
               <h2 className="font-display mt-3 text-3xl font-bold">Predicted champion set</h2>
               <div className="mt-5 rounded-2xl border border-amber-300/35 bg-amber-300/10 p-5">
-                <span className="text-sm text-amber-100">Champion team ID</span>
-                <div className="font-display mt-1 text-4xl font-bold">{championId}</div>
+                <span className="text-sm text-amber-100">{champion ? "Predicted champion" : "Champion team ID"}</span>
+                <div className="mt-2 text-2xl font-bold">
+                  {champion ? <TeamBadge team={champion} /> : <span className="font-display text-4xl">{championId}</span>}
+                </div>
               </div>
             </>
           ) : (

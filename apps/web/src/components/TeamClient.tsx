@@ -34,9 +34,18 @@ function RatingCard({ label, value, accent }: { label: string; value: number | s
   );
 }
 
-function FixtureItem({ fixture, teamId }: { fixture: Fixture; teamId: string }) {
+function FixtureTeam({ teamId, teamsById }: { teamId: string; teamsById: Record<string, Team> }) {
+  const team = teamsById[teamId];
+
+  if (team) return <TeamBadge team={team} compact />;
+
+  return <span className="font-data text-xs uppercase tracking-[0.08em] text-slate-300">{teamId}</span>;
+}
+
+function FixtureItem({ fixture, teamId, teamsById }: { fixture: Fixture; teamId: string; teamsById: Record<string, Team> }) {
   const side = fixture.home_team_id === teamId ? "Home" : "Away";
   const opponentId = fixture.home_team_id === teamId ? fixture.away_team_id : fixture.home_team_id;
+  const opponent = teamsById[opponentId];
 
   return (
     <li className="rounded-2xl border border-[var(--border)] bg-slate-950/45 p-4">
@@ -44,10 +53,12 @@ function FixtureItem({ fixture, teamId }: { fixture: Fixture; teamId: string }) 
         <span className="font-data text-xs uppercase tracking-[0.14em] text-slate-500">Matchday {fixture.matchday}</span>
         <span className="rounded-full border border-slate-700/70 px-2.5 py-1 text-xs font-bold text-slate-300">{side}</span>
       </div>
-      <p className="mt-3 text-sm text-slate-300">
-        <span className="font-bold text-white">{fixture.home_team_id}</span> vs <span className="font-bold text-white">{fixture.away_team_id}</span>
-      </p>
-      <p className="muted mt-1 text-xs">Opponent ID: {opponentId}</p>
+      <div className="mt-3 flex flex-col gap-2 text-sm text-slate-300 sm:flex-row sm:items-center">
+        <FixtureTeam teamId={fixture.home_team_id} teamsById={teamsById} />
+        <span className="font-data text-xs uppercase tracking-[0.12em] text-slate-500">vs</span>
+        <FixtureTeam teamId={fixture.away_team_id} teamsById={teamsById} />
+      </div>
+      <p className="muted mt-2 text-xs">Opponent: {opponent?.name ?? opponentId}</p>
     </li>
   );
 }
@@ -55,6 +66,7 @@ function FixtureItem({ fixture, teamId }: { fixture: Fixture; teamId: string }) 
 export function TeamClient({ teamId }: { teamId: string }) {
   const [team, setTeam] = useState<TeamDetail | null>(null);
   const [explanation, setExplanation] = useState<TeamExplanation | null>(null);
+  const [teamsById, setTeamsById] = useState<Record<string, Team>>({});
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState("");
 
@@ -64,11 +76,13 @@ export function TeamClient({ teamId }: { teamId: string }) {
     Promise.all([
       apiFetch<TeamDetail>(`/teams/${teamId}`),
       apiFetch<TeamExplanation>(`/teams/${teamId}/explanation`),
+      apiFetch<Team[]>("/teams").catch((): Team[] => []),
     ])
-      .then(([teamData, explanationData]) => {
+      .then(([teamData, explanationData, teams]) => {
         if (!active) return;
         setTeam(teamData);
         setExplanation(explanationData);
+        setTeamsById(Object.fromEntries(teams.map((item) => [item.id, item])));
         setError("");
       })
       .catch((reason: Error) => {
@@ -167,7 +181,7 @@ export function TeamClient({ teamId }: { teamId: string }) {
           {team.fixtures.length ? (
             <ul className="mt-4 space-y-3 text-sm text-slate-300">
               {team.fixtures.map((fixture) => (
-                <FixtureItem key={fixture.id} fixture={fixture} teamId={team.id} />
+                <FixtureItem key={fixture.id} fixture={fixture} teamId={team.id} teamsById={teamsById} />
               ))}
             </ul>
           ) : (

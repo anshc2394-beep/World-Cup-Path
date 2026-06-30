@@ -7,6 +7,7 @@ import { apiFetch } from "@/lib/api";
 import { useSimulatorStore } from "@/lib/store";
 import type { Fixture, Team, TournamentState } from "@/lib/types";
 import { Bracket } from "./Bracket";
+import { ErrorState } from "./ErrorState";
 import { GroupTable } from "./GroupTable";
 import { LoadingState } from "./LoadingState";
 import { MatchCard } from "./MatchCard";
@@ -62,7 +63,20 @@ export function SimulatorApp({ section = "all", initialGroup = "A" }: { section?
     } catch (reason) { setError((reason as Error).message); } finally { setBusy(false); }
   }
 
-  if (!teams.length || !fixtures.length || !state) return <div className="shell py-12"><LoadingState /></div>;
+  if (!teams.length || !fixtures.length || !state) {
+    if (error) {
+      return (
+        <div className="shell py-12">
+          <ErrorState
+            title="Couldn’t load the simulator"
+            message={`${error} Check that the FastAPI backend is running, then refresh the page.`}
+          />
+        </div>
+      );
+    }
+
+    return <div className="shell py-12"><LoadingState /></div>;
+  }
   const groupFixtures = fixtures.filter((fixture) => fixture.group === group);
 
   return (
