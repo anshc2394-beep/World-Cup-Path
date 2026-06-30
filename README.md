@@ -8,19 +8,23 @@ WorldCupPath 2026 is a portfolio-ready tournament analytics app built around the
 
 ## Screenshots
 
-Screenshots are not committed yet. The placeholders below are ready for final GitHub assets.
+Current screenshots cover the landing page and Monte Carlo simulation dashboard. Simulator score-entry, third-place, bracket, and GIF assets remain as final media TODOs.
 
-| Landing page | Simulator | Knockout bracket |
+| Landing page | Monte Carlo controls | Monte Carlo chart |
 | --- | --- | --- |
-| TODO: `docs/screenshots/landing.png` | TODO: `docs/screenshots/simulator.png` | TODO: `docs/screenshots/bracket.png` |
+| ![WorldCupPath 2026 landing page](docs/screenshots/landing.png) | ![Monte Carlo controls and top takeaways](docs/screenshots/monte-carlo-controls.png) | ![Monte Carlo championship probability chart](docs/screenshots/monte-carlo-chart.png) |
+
+| Probability cards | Probability table | Knockout bracket |
+| --- | --- | --- |
+| ![Full path probability cards](docs/screenshots/monte-carlo-cards.png) | ![Stage-by-stage probability table](docs/screenshots/monte-carlo-table.png) | TODO: `docs/screenshots/bracket.png` |
 
 Recommended final media checklist:
 
-- [ ] Landing page desktop screenshot
+- [x] Landing page desktop screenshot
 - [ ] Simulator score-entry screenshot
 - [ ] Third-place qualification screenshot
 - [ ] Bracket/champion screenshot
-- [ ] Monte Carlo probability screenshot
+- [x] Monte Carlo probability screenshot
 - [ ] Short GIF showing score entry -> standings -> bracket
 
 ## Features
@@ -294,7 +298,7 @@ See [docs/api-reference.md](docs/api-reference.md).
 
 ## Future improvements
 
-- Add final screenshots and a short demo GIF.
+- Add remaining simulator score-entry, third-place, bracket screenshots, and a short demo GIF.
 - Complete the full FIFA head-to-head, fair-play, and drawing-of-lots tiebreak chain.
 - Add richer team pages with possible knockout opponents from saved prediction state.
 - Replace illustrative ratings with a documented, updateable rating pipeline.
