@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { Bracket } from "./Bracket";
 import { GroupTable } from "./GroupTable";
@@ -19,8 +19,9 @@ describe("core simulator components", () => {
 
   it("renders full standings statistics", () => {
     render(<GroupTable group="C" rows={[row]} teams={{ brazil: team }}/>);
-    expect(screen.getByRole("table", { name: "Group C standings" })).toBeInTheDocument();
-    expect(screen.getByText("7")).toBeInTheDocument();
+    const standingsTable = screen.getByRole("table", { name: "Group C standings" });
+    expect(standingsTable).toBeInTheDocument();
+    expect(within(standingsTable).getByRole("cell", { name: "7" })).toBeInTheDocument();
   });
 
   it("exposes probability as an accessible progress bar", () => {
@@ -34,4 +35,3 @@ describe("core simulator components", () => {
     expect(screen.getByRole("button", { name: /Brazil/ })).toBeDisabled();
   });
 });
-
