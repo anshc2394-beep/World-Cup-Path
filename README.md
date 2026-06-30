@@ -1,75 +1,214 @@
 # WorldCupPath 2026
 
-WorldCupPath 2026 is a full-stack tournament prediction simulator that models the expanded 48-team World Cup format, calculates group and third-place qualification scenarios, runs Monte Carlo simulations, and explains each team's path in plain English.
+**A full-stack 2026 FIFA Men's World Cup prediction simulator for group scenarios, third-place qualification, knockout paths, Monte Carlo probabilities, and plain-English team explanations.**
 
-> **Unofficial fan-made educational project.** This repository is not affiliated with or endorsed by FIFA. Team ratings are illustrative model inputs, not official FIFA ratings or betting advice.
+WorldCupPath 2026 is a portfolio-ready tournament analytics app built around the expanded 48-team World Cup format. Users can edit group-stage scores, watch standings update, rank the 12 third-place teams, generate the Round of 32 bracket, choose knockout winners, save/share predictions, and run seeded simulations to estimate each team's path to the trophy.
+
+> **Disclaimer:** This is an unofficial fan-made educational project. It is not affiliated with, endorsed by, or sponsored by FIFA. Ratings are illustrative model inputs, not official FIFA ratings, betting advice, or tournament forecasts.
 
 ## Screenshots
 
-| Landing | Simulator | Knockout bracket |
+Screenshots are not committed yet. The placeholders below are ready for final GitHub assets.
+
+| Landing page | Simulator | Knockout bracket |
 | --- | --- | --- |
-| _TODO: add `docs/screenshots/landing.png`_ | _TODO: add `docs/screenshots/simulator.png`_ | _TODO: add `docs/screenshots/bracket.png`_ |
+| TODO: `docs/screenshots/landing.png` | TODO: `docs/screenshots/simulator.png` | TODO: `docs/screenshots/bracket.png` |
 
-- [ ] Add final desktop screenshots
-- [ ] Add a mobile simulator screenshot
-- [ ] Add a short score-to-bracket GIF
+Recommended final media checklist:
 
-## What works
+- [ ] Landing page desktop screenshot
+- [ ] Simulator score-entry screenshot
+- [ ] Third-place qualification screenshot
+- [ ] Bracket/champion screenshot
+- [ ] Monte Carlo probability screenshot
+- [ ] Short GIF showing score entry -> standings -> bracket
 
-- All 12 official groups and 72 blank group fixtures
-- Editable score predictions with API-authoritative standings
-- Best-eight ranking across all 12 third-place teams
-- Versioned, checksummed FIFA Annex C lookup covering all 495 qualifying-group combinations
-- Official matches 73–104, including the bronze final
-- Manual knockout winner selection after the group stage is complete
-- Poisson match simulation and seeded Monte Carlo tournament probabilities
-- Deterministic team-path explanations
-- Immutable SQLite prediction snapshots with Remix links
-- Responsive Next.js dashboard and FastAPI OpenAPI documentation
+## Features
 
-## Stack
+- **2026 format support:** 48 teams, 12 groups, 72 group matches, 32-team knockout stage.
+- **Editable group predictions:** Enter scorelines and preview API-authoritative standings.
+- **Standings engine:** Calculates points, wins, draws, losses, goals for/against, goal difference, and points.
+- **Third-place qualification:** Ranks all 12 third-place teams and marks the top 8 as qualified.
+- **Round of 32 bracket:** Generates knockout matches 73-104, including Final and Third-place match support.
+- **Manual knockout picks:** Pick winners once all group-stage scores are complete.
+- **Monte Carlo simulation:** Run seeded simulations and compare qualification, stage reach, finalist, and champion probabilities.
+- **Team pages:** Browse teams, ratings, fixtures, baseline model indicators, and deterministic path explanations.
+- **Save/share predictions:** Store immutable prediction snapshots in SQLite and remix them later.
+- **Plain-English explanations:** Deterministic explanation engine describes team paths without calling an LLM.
+- **Responsive dashboard UI:** Dark sports-broadcast interface with mobile navigation, accessible states, and chart/table summaries.
 
-- **Web:** Next.js 16, React 19, TypeScript, Tailwind CSS 4, Recharts, Zustand, Lucide
-- **API:** FastAPI, Pydantic, SQLAlchemy 2, SQLite
-- **Model:** Python 3.12, NumPy, Poisson score simulation
-- **Testing:** pytest, Vitest, Testing Library, Ruff, ESLint
+## Tech stack
 
-## Tournament format
+| Layer | Tools |
+| --- | --- |
+| Frontend | Next.js 16, React 19, TypeScript, Tailwind CSS 4 |
+| Frontend state/UI | Zustand, Recharts, Lucide React |
+| Backend API | FastAPI, Pydantic, SQLAlchemy |
+| Simulation engine | Python 3.12, NumPy, editable local package in `packages/simulator` |
+| Database | SQLite for local development |
+| Tests/checks | pytest, Ruff, Vitest, Testing Library, ESLint, TypeScript |
+| Local orchestration | Native dev commands, Windows start/stop scripts, Docker Compose |
 
-Forty-eight teams play in 12 groups of four. The top two in every group plus the eight best third-place finishers form the Round of 32. The application implements FIFA's published matches 73–104 and uses Annex C to place the eight third-place qualifiers.
+## Architecture overview
 
-Group ordering is intentionally simplified to points, goal difference, goals scored, wins, seed rating, and team name. See [tournament rules](docs/tournament-rules.md) for the documented gap from FIFA's complete tiebreak process.
+```txt
+worldcup-path-2026/
+├── apps/
+│   ├── web/                  # Next.js App Router frontend
+│   └── api/                  # FastAPI backend and SQLite persistence
+├── packages/
+│   ├── data/                 # snapshots, teams, fixtures, ratings, bracket allocation artifact
+│   └── simulator/            # Python tournament engine and Monte Carlo logic
+├── docs/                     # architecture, model, tournament rules, API reference
+├── AGENTS.md                 # Codex/project instructions
+├── DESIGN.md                 # frontend design system
+├── docker-compose.yml
+└── README.md
+```
 
-## Run locally
+Runtime flow:
 
-Prerequisites: Node.js 22+ and Python 3.12+.
+```txt
+Next.js UI
+  -> FastAPI REST API
+    -> Python simulator package
+      -> JSON seed data + SQLite prediction snapshots
+```
 
-### One-click Windows launch
+The frontend keeps score-entry state locally with Zustand, then asks the API to calculate tournament previews. The API delegates tournament logic to the simulator package so standings, third-place ranking, bracket generation, simulations, and explanations are kept in one testable Python layer.
 
-Double-click **`Start WorldCupPath 2026.cmd`** in the project folder. It checks dependencies, starts the API and website in minimized windows, waits until both are ready, and opens the local site at `http://127.0.0.1:3000` automatically.
+## 2026 World Cup format support
 
-Double-click **`Stop WorldCupPath 2026.cmd`** when you are finished.
+WorldCupPath models the expanded 2026 men's World Cup structure:
 
-If you want to start it from PowerShell without automatically opening a browser, run:
+- 48 teams
+- 12 groups of 4
+- 3 group matches per team
+- Top 2 teams from each group qualify automatically
+- 8 best third-place teams qualify
+- Knockout stage starts at the Round of 32
+- Bracket includes Round of 32, Round of 16, Quarterfinals, Semifinals, Third-place match, Final, and Champion
+
+The project includes a versioned and checksummed Round-of-32 third-place allocation artifact for the 495 qualifying-group combinations.
+
+Known simplification: group ranking implements a practical first-release tiebreak order: points, goal difference, goals scored, wins, seed rating/team fallback. Full FIFA fair-play and drawing-of-lots handling is documented as future work.
+
+See [docs/tournament-rules.md](docs/tournament-rules.md).
+
+## Simulator and model explanation
+
+The model is intentionally simple, transparent, and explainable:
+
+1. Each team starts with seed data:
+   - Elo rating
+   - attack rating
+   - defense rating
+2. Matchups are converted into expected goals.
+3. Scores are sampled with a Poisson-style simulation.
+4. Knockout draws are resolved with a seeded, rating-weighted penalty decision.
+5. Monte Carlo mode repeats full tournaments and reports empirical probabilities.
+
+Returned probabilities include:
+
+- Win group
+- Qualify for Round of 32
+- Reach Round of 16
+- Reach Quarterfinals
+- Reach Semifinals
+- Reach Final
+- Win World Cup
+
+The explanation engine is deterministic. It reads structured tournament state and produces plain-English path summaries without using an external LLM.
+
+See [docs/model-explanation.md](docs/model-explanation.md).
+
+## Data snapshot
+
+The default dataset is `official-pre-tournament`, with blank scores by design.
+
+- Snapshot date: **as of 2026-06-20**
+- Manifest: [packages/data/manifest.json](packages/data/manifest.json)
+- Teams/groups source: [FIFA standings](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/standings)
+- Fixtures source: [FIFA scores and fixtures](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/scores-fixtures)
+- Regulations source: [FIFA World Cup 2026 regulations PDF](https://digitalhub.fifa.com/m/636f5c9c6f29771f/original/FWC2026_regulations_EN.pdf)
+
+`sample-demo` is included for demonstration. `live-snapshot` is reserved structurally, but live-data ingestion is intentionally out of scope for this version.
+
+## How to run locally
+
+### Prerequisites
+
+- Node.js 22+
+- Python 3.12+
+- Git
+
+### Option 1: one-click Windows launch
+
+From the project folder, double-click:
+
+- `Start WorldCupPath 2026.cmd`
+
+This starts the FastAPI backend and Next.js frontend locally, then opens:
+
+```txt
+http://127.0.0.1:3000
+```
+
+To stop both services, double-click:
+
+- `Stop WorldCupPath 2026.cmd`
+
+PowerShell alternative:
+
+```powershell
+.\scripts\start-local.ps1
+```
+
+Without opening a browser:
 
 ```powershell
 .\scripts\start-local.ps1 -NoBrowser
 ```
 
-### API
+### Option 2: manual backend and frontend
+
+Start the backend in one terminal:
 
 ```bash
 cd apps/api
 python -m venv .venv
-# macOS/Linux: source .venv/bin/activate
-# Windows: .venv\Scripts\activate
+```
+
+Activate the virtual environment:
+
+```bash
+# macOS/Linux
+source .venv/bin/activate
+
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+```
+
+Install and run:
+
+```bash
 pip install -r requirements-dev.txt
 uvicorn app.main:app --reload
 ```
 
-The API runs at `http://127.0.0.1:8000`; interactive docs are at `http://127.0.0.1:8000/docs`.
+The API runs at:
 
-### Web
+```txt
+http://127.0.0.1:8000
+```
+
+Interactive API docs:
+
+```txt
+http://127.0.0.1:8000/docs
+```
+
+Start the frontend in another terminal:
 
 ```bash
 cd apps/web
@@ -77,53 +216,99 @@ npm install
 npm run dev
 ```
 
-Open `http://127.0.0.1:3000`. Copy `.env.example` to `.env.local` only when changing the default ports.
+Open:
 
-### Docker Compose
+```txt
+http://127.0.0.1:3000
+```
+
+### Option 3: Docker Compose
 
 ```bash
 docker compose up --build
 ```
 
-## Model overview
+Services:
 
-Expected goals combine an Elo-difference multiplier with attack and opposing-defense factors. Scores are independent Poisson draws. Drawn knockout matches use a seeded, rating-weighted penalty decision. Monte Carlo mode repeats the entire tournament and reports empirical stage probabilities. The same seed reproduces the same result.
+- Web: `http://localhost:3000`
+- API: `http://localhost:8000`
 
-Read the full [model explanation](docs/model-explanation.md), [architecture](docs/architecture.md), [API reference](docs/api-reference.md), and [tournament rules](docs/tournament-rules.md).
+## Frontend commands
 
-## Seed data provenance
-
-The `official-pre-tournament` snapshot is blank by design and is documented **as of 2026-06-20**.
-
-- Teams and groups: [FIFA standings](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/standings)
-- Fixtures: [FIFA scores and fixtures](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/scores-fixtures)
-- Bracket and Annex C: [FIFA World Cup 2026 regulations](https://digitalhub.fifa.com/m/636f5c9c6f29771f/original/FWC2026_regulations_EN.pdf)
-- Knockout progression: [FIFA knockout schedule](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/knockout-stage-match-schedule-bracket)
-
-The source manifest lives in `packages/data/manifest.json`. `sample-demo` is included for demonstration; `live-snapshot` is reserved but intentionally unavailable.
-
-## API overview
-
-Catalog endpoints expose snapshots, teams, groups, and fixtures. `POST /api/tournament/preview` calculates the current state. Prediction endpoints save/load immutable snapshots. Simulation endpoints run individual matches, full tournaments, and 100–10,000 Monte Carlo runs. See [API reference](docs/api-reference.md).
-
-## Tests
+Run from `apps/web`:
 
 ```bash
-# repository root, with the API virtual environment activated
-ruff check apps/api packages/simulator
-pytest -q
-
-cd apps/web
+npm install
+npm run dev
 npm run lint
 npm run typecheck
 npm run test
 npm run build
 ```
 
+## Backend commands
+
+Run from `apps/api` with the virtual environment activated:
+
+```bash
+pip install -r requirements-dev.txt
+uvicorn app.main:app --reload
+```
+
+Run backend checks from the repository root:
+
+```bash
+ruff check apps/api packages/simulator
+pytest -q
+```
+
+## API overview
+
+Core endpoints:
+
+- `GET /api/health`
+- `GET /api/snapshots`
+- `GET /api/teams`
+- `GET /api/teams/{team_id}`
+- `GET /api/groups`
+- `GET /api/groups/{group_id}`
+- `GET /api/fixtures`
+- `POST /api/tournament/preview`
+- `POST /api/predictions`
+- `GET /api/predictions/{prediction_id}`
+- `POST /api/simulate/match`
+- `POST /api/simulate/tournament`
+- `GET /api/simulations/monte-carlo?runs=1000&seed=2026`
+- `GET /api/teams/{team_id}/explanation`
+
+See [docs/api-reference.md](docs/api-reference.md).
+
+## Documentation
+
+- [Architecture](docs/architecture.md)
+- [Model explanation](docs/model-explanation.md)
+- [Tournament rules](docs/tournament-rules.md)
+- [API reference](docs/api-reference.md)
+- [Design system](DESIGN.md)
+- [Codex/project instructions](AGENTS.md)
+
 ## Future improvements
 
-- Complete FIFA head-to-head and team-conduct tiebreaks
-- Live snapshot ingestion behind a replaceable data adapter
-- Venue, travel, lineup, injury, and form adjustments
-- PostgreSQL migration with Alembic
-- Background workers only if simulation workloads outgrow the synchronous cap
+- Add final screenshots and a short demo GIF.
+- Complete the full FIFA head-to-head, fair-play, and drawing-of-lots tiebreak chain.
+- Add richer team pages with possible knockout opponents from saved prediction state.
+- Replace illustrative ratings with a documented, updateable rating pipeline.
+- Add optional live snapshot ingestion behind a data adapter.
+- Add PostgreSQL/Alembic support for deployment-ready persistence.
+- Add deeper browser smoke tests for the full simulator flow.
+- Add venue, travel, injury, lineup, and recent-form model factors.
+
+## Author
+
+Built by **anshc2394-beep**.
+
+- GitHub: `https://github.com/<your-github-username>`
+- LinkedIn: `https://www.linkedin.com/in/<your-linkedin-slug>/`
+- Portfolio: `https://<your-portfolio-url>`
+
+Replace the placeholders above before publishing the repository.
